@@ -10,29 +10,53 @@
     <body class="bg-gray-100">
 
         <!-- Navbar -->
-        <nav class="bg-white shadow-lg">
-            <div class="container mx-auto px-6 py-3">
-                <div class="flex justify-between items-center">
-                    <div class="text-2xl font-bold text-gray-800">Travel
-                        Agency</div>
-                    <ul class="flex justify-center items-center space-x-6">
-                        <li><a href="#tours"
-                                class="text-gray-600 hover:text-gray-800">Tours</a></li>
-                        <li><a href="#destinations"
-                                class="text-gray-600 hover:text-gray-800">Destinations</a></li>
-                        <li><a href="#news"
-                                class="text-gray-600 hover:text-gray-800">News &
-                                Blogs</a></li>
-                        <li><a href="#contact"
-                                class="text-gray-600 hover:text-gray-800">Contact</a></li>
-                        <li>
-                            <button
-                                class="btn bg-blue-900 px-3 py-1 hover:text-blue-700 hover:border-spacing-1 hover:bg-white transition-all rounded-md text-white">Booking</button>
-                        </li>
-                    </ul>
-                </div>
+        <!-- Navbar -->
+<nav class="bg-white shadow-lg fixed w-full z-10 top-0 left-0">
+    <div class="container mx-auto px-6 py-3">
+        <div class="flex justify-between items-center">
+            <!-- Brand Logo or Name -->
+            <div class="text-2xl font-bold text-gray-800">Travel Agency</div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="lg:hidden">
+                <button id="navbar-toggle" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-        </nav>
+
+            <!-- Navbar Links -->
+            <ul id="navbar-menu" class="hidden lg:flex justify-center items-center space-x-6">
+                <li><a href="#tours" class="text-gray-600 hover:text-gray-800">Tours</a></li>
+                <li><a href="#destinations" class="text-gray-600 hover:text-gray-800">Destinations</a></li>
+                <li><a href="#news" class="text-gray-600 hover:text-gray-800">News & Blogs</a></li>
+                <li><a href="#contact" class="text-gray-600 hover:text-gray-800">Contact</a></li>
+                <li>
+                    <button id="booking" class="inline-block bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200">
+                        Booking
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="navbar-mobile" class="lg:hidden hidden">
+        <ul class="flex flex-col space-y-4 mt-4 text-start ps-4">
+            <li><a href="#tours" class="block text-gray-600 underline hover:text-gray-800">Tours</a></li>
+            <li><a href="#destinations" class="block text-gray-600 underline hover:text-gray-800">Destinations</a></li>
+            <li><a href="#news" class="block text-gray-600 underline hover:text-gray-800">News & Blogs</a></li>
+            <li><a href="#contact" class="block text-gray-600 underline hover:text-gray-800">Contact</a></li>
+            <li>
+                <button id="booking-mobile" class="inline-block mb-3 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200">
+                    Booking
+                </button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 
         <!-- Hero Section -->
         <section class="bg-cover bg-center h-screen"
@@ -60,44 +84,69 @@
 
                 <div
                     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                   <!-- start tour component -->
-                   <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
-                    <div class="relative">
-                        <img src="https://via.placeholder.com/400x300" alt="Tour Image" class="w-full h-48 rounded-md object-cover">
-                        <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-semibold py-1 px-2 rounded-full">
-                            $6,000
+                    <!-- start tour component -->
+                    <div
+                        class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                        <div class="relative">
+                            <img src="https://via.placeholder.com/400x300"
+                                alt="Tour Image"
+                                class="w-full h-48 rounded-md object-cover">
+                            <div
+                                class="absolute top-2 left-2 bg-red-500 text-white text-xs font-semibold py-1 px-2 rounded-full">
+                                $6,000
+                            </div>
+                        </div>
+                        <div
+                            class="flex border-gray-900 mt-4 justify-between items-center">
+                            <h3
+                                class="text-xl text-gray-400 font-bold">Turkey</h3>
+                            <h3 class>$150</h3>
+                        </div>
+                        <h3
+                            class="mt-2 text-xl font-semibold text-gray-800">Grand
+                            Switzerland</h3>
+                        <p class="mt-2 text-gray-600">Shopping, Mountain, Snow &
+                            Ice</p>
+                        <div class="flex justify-center items-center mt-2">
+                            <!-- Star ratings -->
+                            <div class="flex">
+                                <svg class="w-5 h-5 text-yellow-400"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927a.75.75 0 011.414 0l1.618 4.773h5.02a.75.75 0 01.448 1.342l-4.057 2.95 1.618 4.773a.75.75 0 01-1.147.83L10 14.97l-4.057 2.95a.75.75 0 01-1.147-.83l1.618-4.773-4.057-2.95a.75.75 0 01.448-1.342h5.02L9.049 2.927z" />
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927a.75.75 0 011.414 0l1.618 4.773h5.02a.75.75 0 01.448 1.342l-4.057 2.95 1.618 4.773a.75.75 0 01-1.147.83L10 14.97l-4.057 2.95a.75.75 0 01-1.147-.83l1.618-4.773-4.057-2.95a.75.75 0 01.448-1.342h5.02L9.049 2.927z" />
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927a.75.75 0 011.414 0l1.618 4.773h5.02a.75.75 0 01.448 1.342l-4.057 2.95 1.618 4.773a.75.75 0 01-1.147.83L10 14.97l-4.057 2.95a.75.75 0 01-1.147-.83l1.618-4.773-4.057-2.95a.75.75 0 01.448-1.342h5.02L9.049 2.927z" />
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927a.75.75 0 011.414 0l1.618 4.773h5.02a.75.75 0 01.448 1.342l-4.057 2.95 1.618 4.773a.75.75 0 01-1.147.83L10 14.97l-4.057 2.95a.75.75 0 01-1.147-.83l1.618-4.773-4.057-2.95a.75.75 0 01.448-1.342h5.02L9.049 2.927z" />
+                                </svg>
+                                <svg class="w-5 h-5 text-gray-300"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927a.75.75 0 011.414 0l1.618 4.773h5.02a.75.75 0 01.448 1.342l-4.057 2.95 1.618 4.773a.75.75 0 01-1.147.83L10 14.97l-4.057 2.95a.75.75 0 01-1.147-.83l1.618-4.773-4.057-2.95a.75.75 0 01.448-1.342h5.02L9.049 2.927z" />
+                                </svg>
+                            </div>
+                            <span class="text-sm text-gray-600 ml-2">4
+                                reviews</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-4">
+                            <a href="#"
+                                class="inline-block bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200">Booking</a>
+                            <span class="text-lg font-semibold text-green-600">6
+                                days</span>
                         </div>
                     </div>
-                    <h3 class="mt-4 text-xl font-semibold text-gray-800">Grand Switzerland</h3>
-                    <p class="mt-2 text-gray-600">Shopping, Mountain, Snow & Ice</p>
-                    <div class="flex items-center mt-2">
-                        <!-- Star ratings -->
-                        <div class="flex">
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927a.75.75 0 011.414 0l1.618 4.773h5.02a.75.75 0 01.448 1.342l-4.057 2.95 1.618 4.773a.75.75 0 01-1.147.83L10 14.97l-4.057 2.95a.75.75 0 01-1.147-.83l1.618-4.773-4.057-2.95a.75.75 0 01.448-1.342h5.02L9.049 2.927z"/>
-                            </svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927a.75.75 0 011.414 0l1.618 4.773h5.02a.75.75 0 01.448 1.342l-4.057 2.95 1.618 4.773a.75.75 0 01-1.147.83L10 14.97l-4.057 2.95a.75.75 0 01-1.147-.83l1.618-4.773-4.057-2.95a.75.75 0 01.448-1.342h5.02L9.049 2.927z"/>
-                            </svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927a.75.75 0 011.414 0l1.618 4.773h5.02a.75.75 0 01.448 1.342l-4.057 2.95 1.618 4.773a.75.75 0 01-1.147.83L10 14.97l-4.057 2.95a.75.75 0 01-1.147-.83l1.618-4.773-4.057-2.95a.75.75 0 01.448-1.342h5.02L9.049 2.927z"/>
-                            </svg>
-                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927a.75.75 0 011.414 0l1.618 4.773h5.02a.75.75 0 01.448 1.342l-4.057 2.95 1.618 4.773a.75.75 0 01-1.147.83L10 14.97l-4.057 2.95a.75.75 0 01-1.147-.83l1.618-4.773-4.057-2.95a.75.75 0 01.448-1.342h5.02L9.049 2.927z"/>
-                            </svg>
-                            <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927a.75.75 0 011.414 0l1.618 4.773h5.02a.75.75 0 01.448 1.342l-4.057 2.95 1.618 4.773a.75.75 0 01-1.147.83L10 14.97l-4.057 2.95a.75.75 0 01-1.147-.83l1.618-4.773-4.057-2.95a.75.75 0 01.448-1.342h5.02L9.049 2.927z"/>
-                            </svg>
-                        </div>
-                        <span class="text-sm text-gray-600 ml-2">4 reviews</span>
-                    </div>
-                    <div class="flex items-center justify-between mt-4">
-                        <a href="#" class="inline-block bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors duration-200">View Details</a>
-                        <span class="text-lg font-semibold text-green-600">6 days</span>
-                    </div>
-                </div>
-                
-                
+
                     <!-- Add more tours in similar blocks -->
                 </div>
             </div>
@@ -111,11 +160,79 @@
                 <p class="mt-4 text-gray-600">Discover the best places to
                     visit</p>
 
-                <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                    <div class="bg-cover bg-center h-64 rounded-lg shadow-lg"
+                <div class="flex justify-between gap-4 mt-8">
+                    <div
+                        class="bg-cover bg-center h-64 w-1/4 rounded-lg shadow-lg transform transition-all duration-300 hover:w-1/2"
                         style="background-image: url('https://via.placeholder.com/400x300');"></div>
-                    <!-- Add more destinations in similar blocks -->
+                    <div
+                        class="bg-cover bg-center h-64 w-1/4 rounded-lg shadow-lg transform transition-all duration-300 hover:w-1/2"
+                        style="background-image: url('https://via.placeholder.com/400x300');"></div>
+                    <div
+                        class="bg-cover bg-center h-64 w-1/4 rounded-lg shadow-lg transform transition-all duration-300 hover:w-1/2"
+                        style="background-image: url('https://via.placeholder.com/400x300');"></div>
+                    <div
+                        class="bg-cover bg-center h-64 w-1/4 rounded-lg shadow-lg transform transition-all duration-300 hover:w-1/2"
+                        style="background-image: url('https://via.placeholder.com/400x300');"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payme Payment Section -->
+        <section id="payme-payment" class="py-16 bg-gray-50">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 text-center">Make a
+                    Payment with Payme</h2>
+                <p class="mt-4 text-gray-600 text-center">Secure your booking by
+                    making a quick payment using Payme.</p>
+
+                <div
+                    class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <!-- Payment Form -->
+                    <div>
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <form id="paymeForm">
+                                <div class="mb-6">
+                                    <label for="name"
+                                        class="block text-left text-gray-700 font-semibold">Full
+                                        Name</label>
+                                    <input type="text" id="name" name="name"
+                                        placeholder="Your Full Name" required
+                                        class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg">
+                                </div>
+
+                                <div class="mb-6">
+                                    <label for="amount"
+                                        class="block text-left text-gray-700 font-semibold">Amount
+                                        (USD)</label>
+                                    <input type="number" id="amount"
+                                        name="amount" placeholder="Enter Amount"
+                                        required min="1"
+                                        class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg">
+                                </div>
+
+                                <div class="mb-6">
+                                    <label for="phone"
+                                        class="block text-left text-gray-700 font-semibold">Phone
+                                        Number</label>
+                                    <input type="tel" id="phone" name="phone"
+                                        placeholder="Your Phone Number" required
+                                        class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg">
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 transition duration-300">
+                                    Pay with Payme
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Image Section (Hidden on mobile) -->
+                    <div class="hidden lg:block">
+                        <img src="https://via.placeholder.com/600x400"
+                            alt="Payment Illustration"
+                            class="rounded-lg shadow-lg">
+                    </div>
                 </div>
             </div>
         </section>
@@ -130,50 +247,218 @@
 
                 <div
                     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                    <!-- Blog Post 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-gray-800">Top 10
-                            Places to Visit in 2024</h3>
-                        <p class="mt-2 text-gray-600">Discover the most popular
-                            destinations for the upcoming year</p>
-                        <a href="#"
-                            class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">Read
-                            More</a>
+                        <img src="https://via.placeholder.com/400x250"
+                            alt="Blog Image"
+                            class="w-full h-40 object-cover rounded-lg">
+                        <div class="mt-4">
+                            <span class="text-gray-500 text-sm">September 27,
+                                2024</span>
+                            <h3
+                                class="mt-2 text-xl font-semibold text-gray-800">Top
+                                10 Places to Visit in 2024</h3>
+                            <p class="mt-2 text-gray-600">Discover the most
+                                popular destinations for the upcoming year</p>
+                            <a href="#"
+                                class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300">Read
+                                More</a>
+                        </div>
                     </div>
-                    <!-- Add more blog posts in similar blocks -->
+
+                    <!-- Blog Post 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <img src="https://via.placeholder.com/400x250"
+                            alt="Blog Image"
+                            class="w-full h-40 object-cover rounded-lg">
+                        <div class="mt-4">
+                            <span class="text-gray-500 text-sm">September 25,
+                                2024</span>
+                            <h3
+                                class="mt-2 text-xl font-semibold text-gray-800">The
+                                Best Adventure Travel Destinations</h3>
+                            <p class="mt-2 text-gray-600">Explore the best
+                                places for your next adventure journey</p>
+                            <a href="#"
+                                class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300">Read
+                                More</a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <img src="https://via.placeholder.com/400x250"
+                            alt="Blog Image"
+                            class="w-full h-40 object-cover rounded-lg">
+                        <div class="mt-4">
+                            <span class="text-gray-500 text-sm">September 20,
+                                2024</span>
+                            <h3
+                                class="mt-2 text-xl font-semibold text-gray-800">How
+                                to Travel on a Budget in 2024</h3>
+                            <p class="mt-2 text-gray-600">Learn the best tips to
+                                travel the world without breaking the bank</p>
+                            <a href="#"
+                                class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300">Read
+                                More</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 border-black bg-white">
-            <div
-                class="container mx-auto text-center border-spacing-1  border-cyan-600">
-                <h2 class="text-3xl font-bold text-gray-800">Contact Us</h2>
-                <p class="mt-4 text-gray-600">Get in touch for more information
-                    or bookings</p>
+        <section id="contact" class="py-16 bg-white">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 text-center">Contact
+                    Us</h2>
+                <p class="mt-4 text-gray-600 text-center">Get in touch for more
+                    information or bookings</p>
 
-                <form class="mt-8 max-w-lg mx-auto">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <input type="text" placeholder="Your Name"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg">
-                        <input type="email" placeholder="Your Email"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+                    <!-- Contact Form -->
+                    <div>
+                        <form id="sendtotelegram"
+                            class="max-w-lg mx-auto lg:mx-0">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <input required type="text" name="name"
+                                    placeholder="Your Name"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                <input required type="text" name="phone"
+                                    placeholder="Your Phone"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                            </div>
+                            <textarea placeholder="Your Message" name="message"
+                                class="w-full mt-4 px-4 py-2 border border-gray-300 rounded-lg"></textarea>
+                            <button type="submit"
+                                class="mt-6 bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 transition duration-300">Send
+                                Message</button>
+                        </form>
                     </div>
-                    <textarea placeholder="Your Message"
-                        class="w-full mt-4 px-4 py-2 border border-gray-300 rounded-lg"></textarea>
-                    <button type="submit"
-                        class="mt-6 bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600">Send
-                        Message</button>
-                </form>
+
+                    <!-- Google Map -->
+                    <div class="h-96 rounded-lg overflow-hidden shadow-lg">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509466!2d144.9537353153168!3d-37.81627927975162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577632e3ed1e678!2sMelbourne%20CBD%2C%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1619935862651!5m2!1sen!2sus"
+                            width="100%" height="100%" style="border:0;"
+                            allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Footer -->
         <footer class="bg-gray-800 text-white py-6">
-            <div class="container mx-auto text-center">
+            <div class="container flex justify-evenly mx-auto items-center text-center">
                 <p>&copy; 2024 Travel Agency. All rights reserved.</p>
+                <!-- Payme Logotipi -->
+                <div class="">
+                    <img class="border p-2 rounded-md" width="100" height="" src="https://turonbank.uz/bitrix/templates/main/images/cards/payments/payme.png" alt="Payme Logo" class="mx-auto h-12">
+                </div>
             </div>
         </footer>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
+            <script>
+                document.getElementById('navbar-toggle').addEventListener('click', function() {
+                    const mobileMenu = document.getElementById('navbar-mobile');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('hidden');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            </script>
+
+        <script>
+            $(document).ready(function() {
+
+                $('input[name="phone"]').mask('+998 (99) 999-99-99');
+
+
+
+                $('#sendtotelegram').on('submit', function(e) {
+                    e.preventDefault();
+        
+                    // Form qiymatlarini olish
+                    var name = $('input[name="name"]').val();
+                    var phone = $('input[name="phone"]').val();
+                    var message = $('textarea[name="message"]').val();
+        
+                    // Telegram bot ma'lumotlari
+                    var telegram_bot_token = '8021915861:AAHOAoAC7TuCyuxUTZZHuojOLfFrYRn2HdA'; // O'zingizning Telegram bot tokeningizni qo'ying
+                    var chat_id = '623582390'; // O'zingizning Telegram chat ID yoki guruh ID qo'ying
+        
+                    // Yuboriladigan xabar formati
+                    var text = "👤 *Name*: " + name + "\n" +
+                               "📞 *Phone*: " + phone + "\n" +
+                               "✉️ *Message*: " + message;
+        
+                    // Telegram API orqali ma'lumot jo'natish
+                    $.ajax({
+                        url: "https://api.telegram.org/bot" + telegram_bot_token + "/sendMessage",
+                        method: "POST",
+                        data: {
+                            chat_id: chat_id,
+                            text: text,
+                            parse_mode: "Markdown"
+                        },
+                        success: function(response) {
+                            // Success Modalni ko'rsatish
+                            $('#successModal').removeClass('hidden');
+                            $('#sendtotelegram')[0].reset();
+                        },
+                        error: function(error) {
+                            // Error Modalni ko'rsatish
+                            $('#errorModal').removeClass('hidden');
+                        }
+                    });
+                });
+        
+                // Success Modalni yopish
+                $('#closeSuccessModal').on('click', function() {
+                    $('#successModal').addClass('hidden');
+                });
+        
+                // Error Modalni yopish
+                $('#closeErrorModal').on('click', function() {
+                    $('#errorModal').addClass('hidden');
+                });
+            });
+</script>
+
+        <!-- success modal -->
+        <!-- Success Modal -->
+        <div id="successModal"
+            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <h3 class="text-2xl font-semibold text-green-600">Success!</h3>
+                <p class="mt-4 text-gray-600">Message sent successfully!</p>
+                <button id="closeSuccessModal"
+                    class="mt-6 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">
+                    Close
+                </button>
+            </div>
+        </div>
+
+        <!-- Error Modal -->
+        <div id="errorModal"
+            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <h3 class="text-2xl font-semibold text-red-600">Error!</h3>
+                <p class="mt-4 text-gray-600">There was an issue sending your
+                    message. Please try again later.</p>
+                <button id="closeErrorModal"
+                    class="mt-6 bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600">
+                    Close
+                </button>
+            </div>
+        </div>
 
     </body>
 </html>

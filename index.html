@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Travel</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
         <link rel="stylesheet" href="/src/assets/css/output.css">
         <link rel="stylesheet" href="/assets/css/output.css">
     </head>
@@ -11,52 +14,70 @@
 
         <!-- Navbar -->
         <!-- Navbar -->
-<nav class="bg-white shadow-lg fixed w-full z-10 top-0 left-0">
-    <div class="container mx-auto px-6 py-3">
-        <div class="flex justify-between items-center">
-            <!-- Brand Logo or Name -->
-            <div class="text-2xl font-bold text-gray-800">Travel Agency</div>
+        <nav class="bg-white shadow-lg fixed w-full z-10 top-0 left-0">
+            <div class="container mx-auto px-6 py-3">
+                <div class="flex justify-between items-center">
+                    <!-- Brand Logo or Name -->
+                    <div class="text-2xl font-bold text-gray-800">Travel
+                        Agency</div>
 
-            <!-- Mobile Menu Toggle Button -->
-            <div class="lg:hidden">
-                <button id="navbar-toggle" class="text-gray-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                    <!-- Mobile Menu Toggle Button -->
+                    <div class="lg:hidden">
+                        <button id="navbar-toggle"
+                            class="text-gray-800 focus:outline-none">
+                            <svg class="w-6 h-6" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Navbar Links -->
+                    <ul id="navbar-menu"
+                        class="hidden lg:flex justify-center items-center space-x-6">
+                        <li><a href="#tours"
+                                class="text-gray-600 hover:text-gray-800">Tours</a></li>
+                        <li><a href="#destinations"
+                                class="text-gray-600 hover:text-gray-800">Destinations</a></li>
+                        <li><a href="#news"
+                                class="text-gray-600 hover:text-gray-800">News &
+                                Blogs</a></li>
+                        <li><a href="#contact"
+                                class="text-gray-600 hover:text-gray-800">Contact</a></li>
+                        <li>
+                            <button id="booking"
+                                class="inline-block bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200">
+                                Booking
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Navbar Links -->
-            <ul id="navbar-menu" class="hidden lg:flex justify-center items-center space-x-6">
-                <li><a href="#tours" class="text-gray-600 hover:text-gray-800">Tours</a></li>
-                <li><a href="#destinations" class="text-gray-600 hover:text-gray-800">Destinations</a></li>
-                <li><a href="#news" class="text-gray-600 hover:text-gray-800">News & Blogs</a></li>
-                <li><a href="#contact" class="text-gray-600 hover:text-gray-800">Contact</a></li>
-                <li>
-                    <button id="booking" class="inline-block bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200">
-                        Booking
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Mobile Menu (Hidden by default) -->
-    <div id="navbar-mobile" class="lg:hidden hidden">
-        <ul class="flex flex-col space-y-4 mt-4 text-start ps-4">
-            <li><a href="#tours" class="block text-gray-600 underline hover:text-gray-800">Tours</a></li>
-            <li><a href="#destinations" class="block text-gray-600 underline hover:text-gray-800">Destinations</a></li>
-            <li><a href="#news" class="block text-gray-600 underline hover:text-gray-800">News & Blogs</a></li>
-            <li><a href="#contact" class="block text-gray-600 underline hover:text-gray-800">Contact</a></li>
-            <li>
-                <button id="booking-mobile" class="inline-block mb-3 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200">
-                    Booking
-                </button>
-            </li>
-        </ul>
-    </div>
-</nav>
-
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="navbar-mobile" class="lg:hidden hidden">
+                <ul class="flex flex-col space-y-4 mt-4 text-start ps-4">
+                    <li><a href="#tours"
+                            class="block text-gray-600 underline hover:text-gray-800">Tours</a></li>
+                    <li><a href="#destinations"
+                            class="block text-gray-600 underline hover:text-gray-800">Destinations</a></li>
+                    <li><a href="#news"
+                            class="block text-gray-600 underline hover:text-gray-800">News
+                            & Blogs</a></li>
+                    <li><a href="#contact"
+                            class="block text-gray-600 underline hover:text-gray-800">Contact</a></li>
+                    <li>
+                        <button id="booking-mobile"
+                            class="inline-block mb-3 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200">
+                            Booking
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
         <!-- Hero Section -->
         <section class="bg-cover bg-center h-screen"
@@ -330,9 +351,11 @@
                             </div>
                             <textarea placeholder="Your Message" name="message"
                                 class="w-full mt-4 px-4 py-2 border border-gray-300 rounded-lg"></textarea>
-                            <button type="submit"
-                                class="mt-6 bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 transition duration-300">Send
-                                Message</button>
+                            <div class="flex justify-end">
+                                <button type="submit"
+                                    class="w-full mt-6 bg-blue-500 text-white py-3 px-6 rounded-xl hover:bg-blue-600 transition duration-300">Send
+                                    Message</button>
+                            </div>
                         </form>
                     </div>
 
@@ -347,24 +370,59 @@
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="bg-gray-800 text-white py-6">
-            <div class="container flex justify-evenly mx-auto items-center text-center">
-                <p>&copy; 2024 Travel Agency. All rights reserved.</p>
-                <!-- Payme Logotipi -->
-                <div class="">
-                    <img class="border p-2 rounded-md" width="100" height="" src="https://turonbank.uz/bitrix/templates/main/images/cards/payments/payme.png" alt="Payme Logo" class="mx-auto h-12">
+
+        <footer class="bg-gray-900 text-gray-300 py-10">
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- About Section -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">About Us</h3>
+                    <p class="text-gray-400">
+                        We are a leading travel agency offering tailor-made vacation packages, tours, and adventures around the world.
+                    </p>
+                </div>
+        
+                <!-- Quick Links Section -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#tours" class="hover:text-white">Tours</a></li>
+                        <li><a href="#destinations" class="hover:text-white">Destinations</a></li>
+                        <li><a href="#news" class="hover:text-white">News & Blogs</a></li>
+                        <li><a href="#contact" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Contact Section -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-phone mr-2"></i> <a href="tel:+998994288038" class="hover:text-white">+99899 428 80 38</a></li>
+                        <li><i class="fas fa-envelope mr-2"></i> <a href="mailto:info@travelagency.com" class="hover:text-white">info@travelagency.com</a></li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 123 Main Street, Tashkent, Uzbekistan</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="border-t border-gray-700 mt-8 pt-4">
+                <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2024 Travel Agency. All rights reserved.</p>
+                    
+                    <!-- Payme Logo -->
+                    <div class="mt-4 md:mt-0">
+                        <img class="border p-2 rounded-md" width="100" src="https://turonbank.uz/bitrix/templates/main/images/cards/payments/payme.png" alt="Payme Logo">
+                    </div>
                 </div>
             </div>
         </footer>
         
+
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 
-            <script>
+        <script>
                 document.getElementById('navbar-toggle').addEventListener('click', function() {
                     const mobileMenu = document.getElementById('navbar-mobile');
                     if (mobileMenu.classList.contains('hidden')) {
